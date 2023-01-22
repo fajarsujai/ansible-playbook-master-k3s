@@ -1,0 +1,7 @@
+- name: setup master k3s
+  become: yes
+  hosts: all
+  tasks:
+    - name: Installing k3s master
+      ansible.builtin.shell:
+        cmd: curl -sfL https://get.k3s.io | sh -s - --flannel-external-ip
